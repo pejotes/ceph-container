@@ -52,7 +52,7 @@ bash -c ' \
       curl -s -L https://shaman.ceph.com/api/repos/ceph-iscsi/main/latest/centos/__ENV_[DISTRO_VERSION]__/repo -o /etc/yum.repos.d/ceph-iscsi.repo ; \
     elif [[ "${CEPH_VERSION}" =~ nautilus|octopus|pacific|quincy ]]; then \
       curl -s -L https://download.ceph.com/ceph-iscsi/3/rpm/el__ENV_[DISTRO_VERSION]__/ceph-iscsi.repo -o /etc/yum.repos.d/ceph-iscsi.repo ; \
-      sed -i 's/gpgcheck=1/gpgcheck=0/g' /etc/yum.repos.d/ceph-iscsi.repo \
+      sed -i 's/gpgcheck=1/gpgcheck=0/g' /etc/yum.repos.d/ceph-iscsi.repo ; \
     else \
       curl -s -L https://download.ceph.com/ceph-iscsi/2/rpm/el__ENV_[DISTRO_VERSION]__/ceph-iscsi.repo -o /etc/yum.repos.d/ceph-iscsi.repo ; \
     fi ; \
